@@ -1,6 +1,8 @@
+import { Route } from "react-router-dom";
+import Home from "./pages/public/Home";
 
 function App() {
-  return <div className="App"></div>;
+	return <Route path="/" element={<Home />}></Route>;
 }
 
 export default App;
