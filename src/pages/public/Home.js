@@ -1,7 +1,17 @@
 function Home() {
-	return <div>
-		<h1>Pill Poppers Website</h1>
-	</div>
+	return (
+		<div>
+			<h1>Pill Poppers Website</h1>
+			<p>
+				Welcome to my new pill management page, here i will be managing
+				the pill sive taken in a format thatworks for those that say up
+				late my ultimate plan for this is going to be a easy place for
+				anyone who works or lives in the night. it will be a place that
+				you cans et your won endin day and from there manaeg pill show
+				you want to instead of how society thinks we should
+			</p>
+		</div>
+	);
 }
 
 export default Home;

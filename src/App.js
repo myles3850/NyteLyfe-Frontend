@@ -1,11 +1,22 @@
 import { Route, Routes } from "react-router-dom";
+
+import Navigation from "./components/interface/Navigation";
+import About from "./pages/public/About";
+import Creator from "./pages/public/Creator";
 import Home from "./pages/public/Home";
+
+import './App.css'
 
 function App() {
 	return (
-		<Routes>
-			<Route path="/" element={<Home />} />
-		</Routes>
+		<div>
+			<Navigation />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/about" element={<About />} />
+				<Route path="/creator" element={<Creator />} />
+			</Routes>
+		</div>
 	);
 }
 
