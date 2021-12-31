@@ -47,7 +47,7 @@
   .dropdown_content:hover {background-color: #ddd; border-radius: 10px;}
   
   /* Show the dropdown menu on hover */
-  [class^='dropdown']:hover .dropdown_content {display: block; border-radius: 10px;}
+  .dropdown_left:hover .dropdown_content {display: block; border-radius: 10px;}
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   [class^='dropdown']:hover .dropbtn {background-color: #3e8e41;}

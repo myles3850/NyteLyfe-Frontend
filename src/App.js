@@ -8,6 +8,8 @@ import Home from "./pages/public/Home";
 import './App.css'
 
 function App() {
+
+	
 	return (
 		<div>
 			<Navigation />
