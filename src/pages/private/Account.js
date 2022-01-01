@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import AddMedication from "./AddMeds/MewMedication";
 import Medications from "./AllMeds";
 import UserSettings from "./UserSettings";
 
@@ -10,11 +11,11 @@ function AccountPage() {
 
 function Account() {
 	return (
-		<div>
+		<div className="account_section">
 			<Routes>
 				<Route path='/' element={<AccountPage />}></Route>
 				<Route path="/medications" element={<Medications />} />
-				<Route path='/settings' element={<UserSettings />} />
+				<Route path='/settings' element={<AddMedication />} />
 			</Routes>
 		</div>
 	);
