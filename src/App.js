@@ -6,11 +6,9 @@ import Creator from "./pages/public/Creator";
 import Home from "./pages/public/Home";
 import Account from "./pages/private/Account";
 
-import './App.css'
+import "./App.css";
 
 function App() {
-
-	
 	return (
 		<div>
 			<Navigation />
