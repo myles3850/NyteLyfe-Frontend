@@ -40,7 +40,7 @@
 }
 
 /* Change color of dropdown links on hover */
-.dropdown_content:hover {
+.dropdown_content a:hover {
 	background-color: #ddd;
 	border-radius: 10px;
 }

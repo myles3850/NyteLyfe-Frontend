@@ -13,10 +13,10 @@ function Navigation() {
 						<h2 className={classes.dropbtn}>Pill Popperz</h2>
 					</Link>
 					<div className={classes.dropdown_content}>
-						<Link to="account">Home</Link>
+						<Link to="account" >Home</Link>
 						<Link to="account/medications">Medication</Link>
-						<Link to="account/history">History</Link>
-						<Link to="account/settings">Settings</Link>
+						<Link to="account/history" >History</Link>
+						<Link to="account/settings" >Settings</Link>
 					</div>
 				</div>
 			</nav>
