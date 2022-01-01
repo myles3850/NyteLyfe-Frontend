@@ -9,6 +9,7 @@
 	margin: 20px;
 	display: inline-flex;
 	flex-direction: column;
+	min-width: 115px;
 }  
   /* On mouse-over, add a deeper shadow */
 .card:hover {
@@ -19,4 +20,9 @@ box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
 /* Add some padding inside the card container */
 .container {
 padding: 2px 16px;
+}
+
+.card_title {
+	margin-bottom: 5px;
+	margin-top: 15px;
 }
