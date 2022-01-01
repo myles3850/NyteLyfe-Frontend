@@ -9,8 +9,9 @@ function Navigation() {
 				<h2 className={classes.dropbtn}>PillPoppers</h2>
 				<div className={classes.dropdown_content}>
 					<Link to="/">Home</Link>
-					<Link to="/About">About</Link>
-					<Link to="/creator">Creator</Link>
+					<Link to="About">About</Link>
+					<Link to="creator">Creator</Link>
+					<Link to='account'>My Profile</Link>
 				</div>
 			</div>
 		</nav>
