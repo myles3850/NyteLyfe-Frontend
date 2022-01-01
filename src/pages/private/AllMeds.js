@@ -1,9 +1,11 @@
-import MedCard from "../../components/MedCard";
+import MedCard from "../../components/private/MedCard";
 
 function Medications() {
 	return (
 		<div>
-			<h2>MEdication List</h2>
+			<h2>Medication List</h2>
+			<MedCard />
+			<MedCard />
 			<MedCard />
 		</div>
 	);
