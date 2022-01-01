@@ -9,7 +9,7 @@
 	margin: 20px;
 	display: inline-flex;
 	flex-direction: column;
-	min-width: 115px;
+	min-width: 130px;
 }  
   /* On mouse-over, add a deeper shadow */
 .card:hover {
