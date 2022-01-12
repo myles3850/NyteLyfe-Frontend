@@ -29,3 +29,5 @@ these can then be connected to any thing required(i had tested on buttons and wo
 
 
 auth is also handled, but no notes on how that works yet.
+
+i can now work within WSL. WIN!!!!
