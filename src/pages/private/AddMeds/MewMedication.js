@@ -22,7 +22,6 @@ function AddMedication() {
 					notes: medData.notes,
 				},
 			]);
-		console.log(data, error)
 	};
 
 	return (
