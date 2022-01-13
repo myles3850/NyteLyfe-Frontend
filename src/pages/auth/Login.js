@@ -6,7 +6,7 @@ function LoginScreen() {
 
 	async function handleSubmit(e) {
 		e.preventDefault();
-		let { user, error } = await Supabase.auth.signUp({
+		let { user, error } = await Supabase.auth.signIn({
 			email: credentials.user,
 			password: credentials.pass,
 		});
