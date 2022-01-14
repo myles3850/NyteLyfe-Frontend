@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { Supabase } from "../logic/Supabase";
 
 import classes from "./Navigation.module.css";
 
@@ -32,7 +33,7 @@ function Navigation() {
 						<Link to="/">Home</Link>
 						<Link to="About">About</Link>
 						<Link to="creator">Creator</Link>
-						<Link to="account">Your Account</Link>
+						<Link to={Supabase.auth.user() ? "account" : "login"}>Your Account</Link>
 					</div>
 				</div>
 			</nav>
