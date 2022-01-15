@@ -12,7 +12,6 @@ function AddMedication() {
 
 	async function handleSubmit (event) {
 		event.preventDefault();
-		//TODO - modify insert to add the users UUID from the JWT stored in the session
 		const { data, error } = await Supabase
 			.from("Medication")
 			.insert([
