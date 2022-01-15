@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Supabase } from "../logic/Supabase";
 
 import classes from "./Navigation.module.css";
@@ -14,10 +14,10 @@ function Navigation() {
 						<h2 className={classes.dropbtn}>Pill Popperz</h2>
 					</Link>
 					<div className={classes.dropdown_content}>
-						<Link to="account" >Home</Link>
-						<Link to="account/medications">Medication</Link>
-						<Link to="account/history" >History</Link>
-						<Link to="account/settings" >Settings</Link>
+						<Link to={Supabase.auth.user() ? "account" : "login"} >Home</Link>
+						<Link to={Supabase.auth.user() ? "account/medications" : "login"}>Medication</Link>
+						<Link to={Supabase.auth.user() ? "account/history" : "login"} >History</Link>
+						<Link to={Supabase.auth.user() ? "account/settings" : "login"} >Settings</Link>
 					</div>
 				</div>
 			</nav>
