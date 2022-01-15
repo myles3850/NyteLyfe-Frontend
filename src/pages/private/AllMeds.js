@@ -9,9 +9,7 @@ function Medications() {
 	}, []);
 
 	async function readData() {
-		const { data: Data, error } = await Supabase.from("Medication").select(
-			"*"
-		);
+		const { data: Data } = await Supabase.from("Medication").select("*");
 		setData(Data);
 	}
 
