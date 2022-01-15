@@ -9,7 +9,7 @@ function LoginScreen() {
 	function handleAuthCheck(error) {
 		!error
 			? navigate("/account", { replace: true })
-			: console.log(error.message);
+			: alert(error.message);
 	}
 
 	async function handleSubmit(e) {
@@ -32,11 +32,21 @@ function LoginScreen() {
 			<form onSubmit={handleSubmit}>
 				<label>
 					<p>Username</p>
-					<input type="text" id="user" onChange={handleUpdate} />
+					<input
+						type="text"
+						id="user"
+						onChange={handleUpdate}
+						required
+					/>
 				</label>
 				<label>
 					<p>Password</p>
-					<input type="password" id="pass" onChange={handleUpdate} />
+					<input
+						type="password"
+						id="pass"
+						onChange={handleUpdate}
+						required
+					/>
 				</label>
 				<div>
 					<button type="submit">Submit</button>
