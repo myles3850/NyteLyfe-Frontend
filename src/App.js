@@ -8,10 +8,10 @@ import Home from "./pages/public/Home";
 import SignUpScreen from "./pages/auth/SignUp";
 import LoginScreen from "./pages/auth/Login";
 import AccountHome from "./pages/private/Account";
-import Medications from "./pages/private/AllMeds";
+import Medications from "./pages/private/Medications/AllMeds";
 import SignupComplete from "./pages/auth/SignUpComplete";
-import AddMedication from "./pages/private/AddMeds/MewMedication";
-import UserSettings from "./pages/private/UserSettings";
+import AddMedication from "./pages/private/Medications/MewMedication";
+import UserSettings from "./pages/private/settings/UserSettings";
 
 import "./App.css";
 

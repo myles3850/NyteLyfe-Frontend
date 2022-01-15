@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Supabase } from "../../components/logic/Supabase";
-import MedCard from "../../components/private/MedCard";
+import { Supabase } from "../../../components/logic/Supabase";
+import MedCard from "../../../components/private/MedCard";
 
 function Medications() {
 	const [data, setData] = useState([]);
