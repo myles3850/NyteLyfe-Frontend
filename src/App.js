@@ -24,7 +24,7 @@ function App() {
 				<Route path="about" element={<About />} />
 				<Route path="creator" element={<Creator />} />
 				<Route path="account/*" element={<AccountHome />}>
-					<Route index element={<AccountHome />}></Route>
+					<Route index element={<AccountHome />} />
 					<Route path="medications" element={<Medications />}>
 						<Route path="new" element={<AddMedication />} />
 					</Route>
