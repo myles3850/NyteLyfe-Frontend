@@ -17,7 +17,7 @@ function AccountPage() {
 	);
 }
 
-function Account() {
+function AccountRouting() {
 	let navigate = useNavigate();
 
 	function handleSignOut() {
@@ -30,7 +30,7 @@ function Account() {
 			<Routes>
 				<Route path="/" element={<AccountPage />}></Route>
 				<Route path="/medications/*" element={<Medications />} />
-				<Route path="/settings" element={<AddMedication />} />
+				<Route path="/settings" element={<UserSettings />} />
 				<Route
 					path="signupConfirmation/"
 					element={<SignupComplete />}
@@ -41,4 +41,4 @@ function Account() {
 	);
 }
 
-export default Account;
+export default AccountRouting;
