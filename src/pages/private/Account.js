@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import { Supabase } from "../../components/logic/Supabase";
 import LoginScreen from "../auth/Login";
 import SignupComplete from "../auth/SignUpComplete";
@@ -12,7 +12,19 @@ function AccountPage() {
 	</div>
 }
 
+
+
+
 function Account() {
+
+	let navigate = useNavigate();
+
+	function handleSignOut () {
+		Supabase.auth.signOut();
+		navigate("/");
+	}
+	
+
 	return (
 		<div className="account_section">
 			<Routes>
@@ -22,7 +34,7 @@ function Account() {
 				<Route path="signupConfirmation/" element={<SignupComplete />} />
 
 			</Routes>
-			<button onClick={() => Supabase.auth.signOut()}>log off</button>
+			<button onClick={handleSignOut}>log off</button>
 		</div>
 	);
 }
