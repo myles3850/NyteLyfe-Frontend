@@ -1,4 +1,4 @@
-import { Outlet, Route, Routes, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Supabase } from "../../components/logic/Supabase";
 
 function AccountHome() {
@@ -14,9 +14,8 @@ function AccountHome() {
 			<div>
 				<h3>Account Home page</h3>
 				<p>
-					this page will contain links and infomration on quick stats
-					for your medication as well as a way to quickly mark them as
-					taken
+					this page will contain links and infomration on quick stats for your medication as well as a way to
+					quickly mark them as taken
 				</p>
 			</div>
 

@@ -7,14 +7,12 @@ function LoginScreen() {
 	let navigate = useNavigate();
 
 	function handleAuthCheck(error) {
-		!error
-			? navigate("/account", { replace: true })
-			: alert(error.message);
+		!error ? navigate("/account", { replace: true }) : alert(error.message);
 	}
 
 	async function handleSubmit(e) {
 		e.preventDefault();
-		let { user, error } = await Supabase.auth.signIn({
+		let { error } = await Supabase.auth.signIn({
 			email: credentials.user,
 			password: credentials.pass,
 		});
@@ -32,21 +30,11 @@ function LoginScreen() {
 			<form onSubmit={handleSubmit}>
 				<label>
 					<p>Email Address</p>
-					<input
-						type="text"
-						id="user"
-						onChange={handleUpdate}
-						required
-					/>
+					<input type="text" id="user" onChange={handleUpdate} required />
 				</label>
 				<label>
 					<p>Password</p>
-					<input
-						type="password"
-						id="pass"
-						onChange={handleUpdate}
-						required
-					/>
+					<input type="password" id="pass" onChange={handleUpdate} required />
 				</label>
 				<div>
 					<button type="submit">Submit</button>

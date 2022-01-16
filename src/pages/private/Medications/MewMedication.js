@@ -10,20 +10,18 @@ function AddMedication() {
 		setMedData((values) => ({ ...values, [name]: value }));
 	};
 
-	async function handleSubmit (event) {
+	async function handleSubmit(event) {
 		event.preventDefault();
-		const { data, error } = await Supabase
-			.from("Medication")
-			.insert([
-				{
-					name: medData.name,
-					dose: medData.dosage,
-					frequency: medData.frequency,
-					notes: medData.notes,
-				},
-			]);
-			console.log(data, error);
-	};
+		const { data, error } = await Supabase.from("Medication").insert([
+			{
+				name: medData.name,
+				dose: medData.dosage,
+				frequency: medData.frequency,
+				notes: medData.notes,
+			},
+		]);
+		console.log(data, error);
+	}
 
 	return (
 		<div className="newMedicationForm">
@@ -38,11 +36,7 @@ function AddMedication() {
 				</label>
 				<label>
 					frequency:
-					<input
-						id="frequency"
-						type="text"
-						onChange={handleChanges}
-					/>
+					<input id="frequency" type="text" onChange={handleChanges} />
 				</label>
 				<label>
 					Notes:

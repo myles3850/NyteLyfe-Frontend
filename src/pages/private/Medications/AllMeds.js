@@ -21,7 +21,8 @@ function Medications() {
 			<h2>Medication List</h2>
 			{data.map((Medication) => {
 				return <MedCard key={Medication.id} medication={Medication} />;
-			})} <br/>
+			})}{" "}
+			<br />
 			<button onClick={() => navigate("new")}>Add medication</button>
 		</div>
 	);

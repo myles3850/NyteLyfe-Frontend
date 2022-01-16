@@ -14,10 +14,10 @@ function Navigation() {
 						<h2 className={classes.dropbtn}>Pill Popperz</h2>
 					</Link>
 					<div className={classes.dropdown_content}>
-						<Link to={Supabase.auth.user() ? "account" : "login"} >Home</Link>
+						<Link to={Supabase.auth.user() ? "account" : "login"}>Home</Link>
 						<Link to={Supabase.auth.user() ? "account/medications" : "login"}>Medication</Link>
-						<Link to={Supabase.auth.user() ? "account/history" : "login"} >History</Link>
-						<Link to={Supabase.auth.user() ? "account/settings" : "login"} >Settings</Link>
+						<Link to={Supabase.auth.user() ? "account/history" : "login"}>History</Link>
+						<Link to={Supabase.auth.user() ? "account/settings" : "login"}>Settings</Link>
 					</div>
 				</div>
 			</nav>

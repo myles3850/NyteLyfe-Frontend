@@ -1,7 +1,6 @@
 import classes from "./MedCard.module.css";
 
 function MedCard(prop) {
-
 	return (
 		<div className={classes.card}>
 			<h4 className={classes.card_title}>{prop.medication.name}</h4>
