@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Supabase } from "../../../components/logic/Supabase";
+import HandleErrorCheck from "../../../components/logic/ValidationCheck";
 
 function AddMedication() {
 	const [medData, setMedData] = useState({});
