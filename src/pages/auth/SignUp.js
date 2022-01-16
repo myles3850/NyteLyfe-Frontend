@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Supabase } from "../../components/logic/Supabase";
 
 function SignUpScreen() {
 	const [credentials, setCredentials] = useState("");
+	let navigate = useNavigate();
+
 
 	async function handleSubmit(e) {
 		e.preventDefault();
@@ -13,7 +15,16 @@ function SignUpScreen() {
 		});
 
 		console.log(user, error);
+		handleAuthCheck(error);
+
 	}
+
+	function handleAuthCheck(error) {
+		!error
+			? navigate("SignupComplete", { replace: true })
+			: alert(error.message);
+	}
+
 
 	function handleUpdate(e) {
 		let name = e.target.id;
