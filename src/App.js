@@ -10,7 +10,7 @@ import LoginScreen from "./pages/auth/Login";
 import AccountHome from "./pages/private/Account";
 import Medications from "./pages/private/Medications/AllMeds";
 import SignupComplete from "./pages/auth/SignUpComplete";
-import AddMedication from "./pages/private/Medications/MewMedication";
+import AddMedication from "./pages/private/Medications/NewMedication";
 import UserSettings from "./pages/private/settings/UserSettings";
 
 import "./App.css";
