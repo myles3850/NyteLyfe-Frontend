@@ -31,7 +31,7 @@ function LoginScreen() {
 		<div>
 			<form onSubmit={handleSubmit}>
 				<label>
-					<p>Username</p>
+					<p>Email Address</p>
 					<input
 						type="text"
 						id="user"

@@ -24,7 +24,7 @@ function SignUpScreen() {
 	return (<div>
 		<form onSubmit={handleSubmit}>
 			<label>
-				<p>Username</p>
+				<p>Email Address</p>
 				<input type="text" id="user" onChange={handleUpdate} />
 			</label>
 			<label>
