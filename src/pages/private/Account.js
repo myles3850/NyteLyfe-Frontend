@@ -20,7 +20,6 @@ function AccountHome() {
 				</p>
 			</div>
 
-			<Outlet />
 			<button onClick={handleSignOut}>log off</button>
 		</div>
 	);
