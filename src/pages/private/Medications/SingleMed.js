@@ -7,11 +7,11 @@ function Medication() {
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		readData(params.medicationId);
+		readData();
 	}, []);
 
-	async function readData(calledMed) {
-		const { data: Data } = await Supabase.from("Medication").select("*").eq('id', calledMed);
+	async function readData() {
+		const { data: Data } = await Supabase.from("Medication").select("*").eq("id", params.medicationId);
 		setData(Data);
 	}
 
