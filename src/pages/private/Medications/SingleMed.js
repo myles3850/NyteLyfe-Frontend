@@ -13,7 +13,6 @@ function Medication() {
 	async function readData() {
 		const { data: Data } = await Supabase.from("Medication").select("*").eq("id", params.medicationId);
 		setData(Data[0]);
-		console.log(Data[0])
 	}
 
 	return (
