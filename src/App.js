@@ -14,6 +14,7 @@ import AddMedication from "./pages/private/Medications/MewMedication";
 import UserSettings from "./pages/private/settings/UserSettings";
 
 import "./App.css";
+import Medication from "./pages/private/Medications/SingleMed";
 
 function App() {
 	return (
@@ -27,6 +28,7 @@ function App() {
 					<Route index element={<AccountHome />} />
 					<Route path="medications">
 						<Route index element={<Medications />} />
+						<Route path=":medicationId" element={<Medication />} />
 						<Route path="new" element={<AddMedication />} />
 					</Route>
 					<Route path="history" element={<SignupComplete />} />
