@@ -25,17 +25,17 @@ function App() {
 				<Route path="creator" element={<Creator />} />
 				<Route path="account">
 					<Route index element={<AccountHome />} />
-					<Route path="medications" element={<Medications />}>
+					<Route path="medications">
+						<Route index element={<Medications />} />
 						<Route path="new" element={<AddMedication />} />
 					</Route>
 					<Route path="history" element={<SignupComplete />} />
 					<Route path="settings" element={<UserSettings />} />
-					<Route
-						path="signupConfirmation"
-						element={<SignupComplete />}
-					/>
 				</Route>
-				<Route path="signup" element={<SignUpScreen />} />
+				<Route path="signup">
+					<Route index element={<SignUpScreen />} />
+					<Route path="Confirmation" element={<SignupComplete />} />
+				</Route>
 				<Route path="login" element={<LoginScreen />} />
 			</Routes>
 		</div>

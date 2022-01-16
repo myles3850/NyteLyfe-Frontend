@@ -21,7 +21,7 @@ function SignUpScreen() {
 
 	function handleAuthCheck(error) {
 		!error
-			? navigate("SignupComplete", { replace: true })
+			? navigate("confirmation", { replace: true })
 			: alert(error.message);
 	}
 
