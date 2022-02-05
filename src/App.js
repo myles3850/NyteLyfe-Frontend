@@ -1,5 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
+import "./App.css";
+
 import Navigation from "./components/interface/Navigation";
 
 import About from "./pages/public/About";
@@ -12,9 +14,8 @@ import Medications from "./pages/private/Medications/AllMeds";
 import SignupComplete from "./pages/auth/SignUpComplete";
 import AddMedication from "./pages/private/Medications/NewMedication";
 import UserSettings from "./pages/private/settings/UserSettings";
-
-import "./App.css";
 import Medication from "./pages/private/Medications/SingleMed";
+
 
 function App() {
 	return (
