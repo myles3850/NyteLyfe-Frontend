@@ -2,12 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Supabase } from "../../components/logic/Supabase";
 
 function AccountHome() {
-	let navigate = useNavigate();
 
-	function handleSignOut() {
-		Supabase.auth.signOut();
-		navigate("/");
-	}
 
 	return (
 		<div className="account_section">
@@ -19,7 +14,6 @@ function AccountHome() {
 				</p>
 			</div>
 
-			<button onClick={handleSignOut}>log off</button>
 		</div>
 	);
 }
