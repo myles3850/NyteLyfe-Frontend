@@ -18,7 +18,6 @@ function MedCard(prop) {
 						<p>TAKEN</p>
 					</Card.Text>
 					<Card.Link href="#">Card Link</Card.Link>
-					<Card.Link href="#">Another Link</Card.Link>
 				</Card.Body>
 			</Card>
 	);
