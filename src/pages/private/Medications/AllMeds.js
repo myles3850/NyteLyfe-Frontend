@@ -1,6 +1,4 @@
-import { Button, CardGroup, Container, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import { Supabase } from "../../../components/logic/Supabase";
+import { Container } from "react-bootstrap";
 
 function Medications() {
 

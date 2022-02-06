@@ -1,16 +1,17 @@
-import { Button, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { Supabase } from "../logic/Supabase";
-import classes from "./MedCard.module.css";
 
 function MedCard(prop) {
 	let navigate = useNavigate();
 
 	async function handleQuickSubmit() {
-		const { data, error } = await Supabase.from("dosage_history").insert([
+		const error = await Supabase.from("dosage_history").insert([
 			{ medication_taken_id: prop.medication.id, time_taken: "otherValue" },
 		]);
+		console.log(error);
 	}
+	
 
 	return (
 		<Card style={{ margin: "10px", width: "18rem" }} bg="light">
@@ -22,7 +23,7 @@ function MedCard(prop) {
 					<p>{prop.medication.notes}</p>
 					<p>TAKEN</p>
 				</Card.Text>
-				<Card.Link href="#">taken</Card.Link>
+				<Card.Link onClick={handleQuickSubmit}>taken</Card.Link>
 			</Card.Body>
 		</Card>
 	);

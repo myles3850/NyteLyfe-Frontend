@@ -8,7 +8,7 @@ function SignUpScreen() {
 
 	async function handleSubmit(e) {
 		e.preventDefault();
-		let { user, error } = await Supabase.auth.signUp({
+		let { error } = await Supabase.auth.signUp({
 			email: credentials.user,
 			password: credentials.pass,
 		});

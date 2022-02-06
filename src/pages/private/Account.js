@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Supabase } from "../../components/logic/Supabase";
-import { Button, CardGroup, Container, Row } from "react-bootstrap";
+import { Button, Container, Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
 
@@ -30,7 +30,7 @@ function AccountHome() {
 					quickly mark them as taken
 				</p>
 				<Container fluid className="text-center">
-					<Row xs={1} md={2} className="g-4" className="justify-content-md-center">
+					<Row xs={1} md={2} className="g-4 justify-content-md-center">
 						{data.map((Medication) => {
 							return <MedCard key={Medication.id} medication={Medication} />;
 						})}
