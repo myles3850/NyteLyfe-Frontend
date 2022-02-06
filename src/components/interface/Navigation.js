@@ -2,7 +2,6 @@ import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Supabase } from "../logic/Supabase";
 
-import classes from "./Navigation.module.css";
 
 function Navigation() {
 	let location = useLocation().pathname;
