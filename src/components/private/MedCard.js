@@ -7,9 +7,9 @@ function MedCard(prop) {
 	let navigate = useNavigate();
 
 	async function handleQuickSubmit() {
-		const { data, error } = await Supabase
-			.from("dosage_history")
-			.insert([{ medication_taken_id: prop.medication.id, time_taken: "otherValue" }]);
+		const { data, error } = await Supabase.from("dosage_history").insert([
+			{ medication_taken_id: prop.medication.id, time_taken: "otherValue" },
+		]);
 	}
 
 	return (
