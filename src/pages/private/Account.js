@@ -36,7 +36,7 @@ function AccountHome() {
 						})}
 					</Row>
 					<br />
-					<Button className="center" onClick={() => navigate("new")}>
+					<Button className="center" onClick={() => navigate("medications/new")}>
 						Add medication
 					</Button>
 				</Container>

@@ -15,6 +15,7 @@ import SignupComplete from "./pages/auth/SignUpComplete";
 import AddMedication from "./pages/private/Medications/NewMedication";
 import UserSettings from "./pages/private/settings/UserSettings";
 import Medication from "./pages/private/Medications/SingleMed";
+import FullMedRecording from "./pages/private/Recording/RecordTaken";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
 				<Route path="creator" element={<Creator />} />
 				<Route path="account">
 					<Route index element={<AccountHome />} />
+					<Route path=':MedicationId' element={<FullMedRecording />} />
 					<Route path="medications">
 						<Route index element={<Medications />} />
 						<Route path=":medicationId" element={<Medication />} />
