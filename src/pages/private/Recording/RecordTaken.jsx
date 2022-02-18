@@ -1,15 +1,51 @@
-import { Container, Form, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
-
+import { useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { Button, Container, Form, Nav } from "react-bootstrap";
+import DatePicker from "react-date-picker";
+import TimePicker from "react-time-picker";
+import { Supabase } from "../../../components/logic/Supabase";
 export default function FullMedRecording() {
+	const [dateValue, changeDate] = useState(new Date());
+	const [timeValue, changeTime] = useState(new Date());
+
+	let navigate = useNavigate();
+	const { medicationId } = useParams();
+
+	function TestSubmit(e) {
+		e.preventDefault();
+		let error = {};
+		const user = Supabase.auth.user();
+		console.log(dateValue, timeValue, user.id, medicationId);
+		!error ? navigate(redirect, { replace: true }) : alert(error.message);
+	}
+
+	// async function HandleSubmit() {
+	// 	const user = Supabase.auth.user();
+
+	// 	const { data, error } = await Supabase.from("dosage_history").insert([
+	// 		{ id: prop.medicationId, user_taken_id: user.id },
+	// 	]);
+
+	// 	useHandleErrorCheck(error, '/account');
+	// }
+
 	return (
 		<Container fluid>
-		<Nav.Link as={Link} to='/account'> &lt; Back </Nav.Link>
+			<Nav.Link as={Link} to="/account">
+				&lt; Back
+			</Nav.Link>
 			<p>lets report what we doook</p>
-			<Form>
+			<Form method="post" onSubmit={TestSubmit}>
 				<Form.Group>
-					<Form.Label>Date</Form.Label>
+					<Form.Label>Date</Form.Label> <br />
+					<DatePicker onChange={changeDate} value={dateValue} />
 				</Form.Group>
+				<Form.Group>
+					<Form.Label>Time</Form.Label> <br />
+					<TimePicker onChange={changeTime} value={timeValue} disableClock="True" format="hh:mm a" />
+				</Form.Group>{" "}
+				<br />
+				<Button type="submit">Submit</Button>
 			</Form>
 		</Container>
 	);
