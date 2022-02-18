@@ -28,7 +28,7 @@ function App() {
 				<Route path="creator" element={<Creator />} />
 				<Route path="account">
 					<Route index element={<AccountHome />} />
-					<Route path=':MedicationId' element={<FullMedRecording />} />
+					<Route path=':medicationId' element={<FullMedRecording />} />
 					<Route path="medications">
 						<Route index element={<Medications />} />
 						<Route path=":medicationId" element={<Medication />} />
