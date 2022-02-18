@@ -13,21 +13,19 @@ export default function FullMedRecording() {
 
 	function TestSubmit(e) {
 		e.preventDefault();
-		let error = {};
+		let error = { message: "working" };
 		const user = Supabase.auth.user();
 		console.log(dateValue, timeValue, user.id, medicationId);
-		!error ? navigate(redirect, { replace: true }) : alert(error.message);
+		!error ? navigate("/account", { replace: true }) : alert(error.message);
 	}
 
-	// async function HandleSubmit() {
-	// 	const user = Supabase.auth.user();
+	async function HandleSubmit() {
+		const user = Supabase.auth.user();
 
-	// 	const { data, error } = await Supabase.from("dosage_history").insert([
-	// 		{ id: prop.medicationId, user_taken_id: user.id },
-	// 	]);
-
-	// 	useHandleErrorCheck(error, '/account');
-	// }
+		const { data, error } = await Supabase.from("dosage_history").insert([
+			{ id: medicationId, user_taken_id: user.id, date_taken: dateValue, time_taken: timeValue, skipped: false },
+		]);
+	}
 
 	return (
 		<Container fluid>
