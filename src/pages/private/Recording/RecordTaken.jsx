@@ -7,19 +7,20 @@ import { Supabase } from "../../../components/logic/Supabase";
 
 export default function FullMedRecording() {
 	const [dateValue, changeDate] = useState(new Date());
-	const [timeValue, changeTime] = useState(new Date());
-	const [skipped, setSkipped] = useState(false);
+	const [timeValue, changeTime] = useState('00:01');
+	const [state, setState] = useState({});
 
 	const navigate = useNavigate();
 	const { medicationId } = useParams();
 
+	const handleToggle = ({ target }) => setState((s) => ({ ...s, [target.name]: !s[target.name] }));
+
 	async function HandleSubmit(e) {
 		e.preventDefault();
 		const user = Supabase.auth.user();
-		console.log(e);
 
 		const { data, error } = await Supabase.from("dosage_history").insert([
-			{ medication_taken_id: medicationId, date_taken: dateValue, time_taken: timeValue, skipped: skipped },
+			{ medication_taken_id: medicationId, date_taken: dateValue, time_taken: timeValue, skipped: state.skipped },
 		]);
 		!error ? navigate("/account", { replace: true }) : alert(error.message);
 	}
@@ -40,9 +41,15 @@ export default function FullMedRecording() {
 						<Form.Label>Date</Form.Label> <br />
 						<DatePicker onChange={changeDate} value={dateValue} />
 					</Form.Group>
+					<br />
 					<Form.Group>
 						<Form.Label>Time</Form.Label> <br />
 						<TimePicker onChange={changeTime} value={timeValue} disableClock="True" format="hh:mm a" />
+					</Form.Group>
+					<br />
+					<Form.Group>
+						<Form.Label>Skipped This Dose</Form.Label> <br />
+						<Form.Check name="skipped" onChange={handleToggle} />
 					</Form.Group>
 					<br />
 					<Button type="submit">Submit</Button>
