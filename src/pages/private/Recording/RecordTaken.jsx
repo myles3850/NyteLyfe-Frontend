@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button, Container, Form } from "react-bootstrap";
-import DatePicker from "react-date-picker";
-import TimePicker from "react-time-picker";
 import { Supabase } from "../../../components/logic/Supabase";
 
 export default function FullMedRecording() {
@@ -39,12 +37,10 @@ export default function FullMedRecording() {
 				<Form method="post" onSubmit={HandleSubmit}>
 					<Form.Group>
 						<Form.Label>Date</Form.Label> <br />
-						<DatePicker onChange={changeDate} value={dateValue} />
 					</Form.Group>
 					<br />
 					<Form.Group>
 						<Form.Label>Time</Form.Label> <br />
-						<TimePicker onChange={changeTime} value={timeValue} disableClock="True" format="hh:mm a" />
 					</Form.Group>
 					<br />
 					<Form.Group>
