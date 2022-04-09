@@ -1,45 +1,50 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { Route, Routes } from "react-router-dom";
+
+import "./App.css";
+
+import Navigation from "./components/interface/Navigation";
+
+import About from "./pages/public/About";
+import Creator from "./pages/public/Creator";
+import Home from "./pages/public/Home";
+import SignUpScreen from "./pages/auth/SignUp";
+import LoginScreen from "./pages/auth/Login";
+import AccountHome from "./pages/private/Account";
+import Medications from "./pages/private/Medications/AllMeds";
+import SignupComplete from "./pages/auth/SignUpComplete";
+import AddMedication from "./pages/private/Medications/NewMedication";
+import UserSettings from "./pages/private/settings/UserSettings";
+import Medication from "./pages/private/Medications/SingleMed";
+import FullMedRecording from "./pages/private/Recording/RecordTaken";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
+	return (
+		<div>
+			<Navigation />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="about" element={<About />} />
+				<Route path="creator" element={<Creator />} />
+				<Route path="account">
+					<Route index element={<AccountHome />} />
+					<Route path=':medicationId' element={<FullMedRecording />} />
+					<Route path="medications">
+						<Route index element={<Medications />} />
+						<Route path=":medicationId" element={<Medication />} />
+						<Route path="new" element={<AddMedication />} />
+					</Route>
+					<Route path="history" element={<SignupComplete />} />
+					<Route path="settings" element={<UserSettings />} />
+				</Route>
+				<Route path="signup">
+					<Route index element={<SignUpScreen />} />
+					<Route path="Confirmation" element={<SignupComplete />} />
+				</Route>
+				<Route path="login" element={<LoginScreen />} />
+			</Routes>
+		</div>
+	);
 }
 
-export default App
+export default App;
