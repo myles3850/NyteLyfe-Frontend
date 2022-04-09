@@ -11,18 +11,15 @@ function MedCard(prop) {
 		]);
 		console.log(error);
 	}
-	
 
 	return (
 		<Card style={{ margin: "10px", width: "18rem" }} bg="light">
 			<Card.Body onClick={() => navigate(`${prop.medication.id}`)}>
 				<Card.Title>{prop.medication.name}</Card.Title>
 				<Card.Subtitle className="mb-2 text-muted">{prop.medication.dose}</Card.Subtitle>
-				<Card.Text>
-					<p>{prop.medication.frequency}</p>
-					<p>{prop.medication.notes}</p>
-					<p>TAKEN</p>
-				</Card.Text>
+				<Card.Text>{prop.medication.frequency}</Card.Text>
+				<Card.Text>{prop.medication.notes}</Card.Text>
+				<Card.Text>TAKEN</Card.Text>
 				<Card.Link onClick={handleQuickSubmit}>taken</Card.Link>
 			</Card.Body>
 		</Card>
