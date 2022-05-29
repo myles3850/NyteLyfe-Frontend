@@ -45,7 +45,7 @@ function Navigation() {
 										About
 									</Nav.Link>
 									<Nav.Link as={Link} to="Creator">
-										Creater
+										Creator
 									</Nav.Link>
 								</Nav>
 							)}
