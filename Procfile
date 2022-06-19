@@ -1,1 +1,1 @@
-web: dist/index.html
+web: bin/start-nginx-solo
