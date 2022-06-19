@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import loginUser from "../../components/logic/serverConnection";
+import loginUser from "../../components/logic/backendConnection";
 import { Supabase } from "../../components/logic/Supabase";
 
 function LoginScreen() {
