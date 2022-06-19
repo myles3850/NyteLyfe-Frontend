@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import loginUser from "../../components/logic/serverConnection";
 import { Supabase } from "../../components/logic/Supabase";
 
 function LoginScreen() {
@@ -27,7 +28,7 @@ function LoginScreen() {
 
 	return (
 		<div>
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={loginUser}>
 				<label>
 					<p>Email Address</p>
 					<input type="text" id="user" onChange={handleUpdate} required />
